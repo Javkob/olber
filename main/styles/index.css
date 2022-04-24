@@ -1,0 +1,264 @@
+* {
+    margin: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    font-weight: bolder;
+    background-color: #f8f8f8 !important;
+
+    font-size: 15px;
+    color: #4c515a;
+}
+
+.navbar {
+    display: flex;
+    flex-wrap: wrap; /*Allows the children inside a flex container to wrap down onto the next line if there is not enough space.*/
+    align-items: center; /*Centers the children of a flex container vertically.*/
+    justify-content: space-between; /*Adds space between each child of a flex container.*/
+    background-color: #ffffff;
+    padding: 10px; /*Padding top and bottom*/
+    padding-inline: 100px;
+}
+
+.navbar a {
+
+    text-decoration: none;
+    color: inherit; /*Inherits the same color as the parent element or grandparent (the body) unless you set the color to the navbar.*/
+}
+
+.space{
+    margin-top: 30px;
+
+}
+
+.title{
+    font-weight: 800;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.logo {
+    text-align: center;
+    color: orange!important;
+    font-weight: 700;
+    -webkit-text-stroke-width: 0.2px;
+    -webkit-text-stroke-color: black;
+
+}
+
+dl, ol, ul {
+    margin-bottom: 0px !important;
+}
+
+.list {
+    list-style: none;
+
+    display: flex;
+    gap: 25px; /*Applies right and bottom spacing between children inside a flex or grid container.*/
+}
+
+.menu {
+
+}
+.row{
+    --bs-gutter-x: 0!important;
+}
+
+#toggler,
+.navbar label {
+    display: none; /*Hide the checkbox and label on large screens.*/
+}
+
+/*Breakpoint set at 600px, once it is 600px or smaller the layout changes to use the following styles overriding the old ones.*/
+@media screen and
+(max-width: 1200px) {
+    .card-img-top{
+        height: 200px!important;
+    }
+    .navbar {
+        padding-inline: 20px;
+        justify-content: space-around!important;
+    }
+
+    .menu {
+        width: 100%;
+        max-height: 0; /*Makes the max-height 0 to side the expanded menu.*/
+        overflow: hidden; /*Hides the overflowing content.*/
+    }
+
+    .list {
+        flex-direction: column; /*Chances the direction of the flex container. By default it is a row so we change it to column in small screens.*/
+        align-items: center;
+        padding: 20px;
+    }
+
+    .navbar label {
+        display: inline-flex; /*Makes it an inline flex container for the icon. Used for centering the icon inside this box.*/
+        align-items: center;
+        cursor: pointer;
+    }
+    .logo{
+
+    }
+
+    /*
+        The general sibling selector (~) selects all elements that are next siblings of #toggler.
+        In this case we target the .menu and we turn the height back to 100% to show the menu.
+    */
+    #toggler:checked ~ .menu {
+        max-height: 100%;
+    }
+}
+.card-img-top{
+    height: 300px;
+}
+@media screen and
+(max-width: 766px) {
+    .card-img-top {
+        max-height: 300px !important;
+
+    }
+    .card{
+       max-width: 500px!important;
+    }
+    .text-block{
+        width: 60%!important;
+    }
+}
+
+/*img {*/
+/*    filter: blinds(100px);*/
+/*    background-color: black;*/
+/*    width: 100%;*/
+/*    height: 600px;*/
+/*    object-fit: cover;*/
+/*    object-position: center;*/
+/*    box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.89);*/
+/*}*/
+.layer {
+    background-color: rgba(0, 0, 0, 0.35);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.phone {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+}
+
+.text-main {
+    position: absolute;
+    top: 45%;
+    left: 0;
+    width: 100%;
+}
+
+.thumbnail {
+    position: relative;
+
+}
+
+
+
+.text-block {
+    -webkit-text-stroke-width: 0.5px;
+    -webkit-text-stroke-color: black;
+    font-family: 'Open Sans', Helvetica, Arial, Lucida, sans-serif !important;
+    opacity: 90%;
+    position: absolute;
+    bottom: 5%;
+    right: 10px;
+    background-color: rgba(255, 255, 255, 0.75);
+    color: #000000;
+    font-weight: bold;
+    text-transform: uppercase;
+    width: 50%;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+}
+.card-title{
+    text-align: center;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: #ef9c00
+
+}
+.card-text{
+    text-align: center;
+}
+.img-offer{
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+    height: 400px;
+
+
+}
+.col-md-4{
+    padding-top: 30px;
+}
+.gradient-orange {
+    background-color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+#offer_bg_1 {
+    background-image:
+            linear-gradient(to right, rgba(0, 0, 0, 0.5), rgb(0, 0, 0,1)),
+            url('../assets/test/gf-AnD8-Zmju-gtPZ_naprawa-wyrwanego-kontaktu-664x442-nocrop.jpg');
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+    height: 400px;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 20px;
+}
+#offer_bg_2 {
+    background-image:
+            linear-gradient(to left, rgba(255, 142, 0, 0.50), rgb(255, 142, 0)),
+            url('../assets/test/banner.jpg');
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+    height: 400px;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 20px;
+}
+#offer_bg_3 {
+    background-image:
+            linear-gradient(to right, rgba(255, 140, 0, 0.5), rgba(255, 140, 0, 1)),
+            url('../assets/lomovcev_sv-DPcboE2nSjo-unsplash.jpg');
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+    height: 400px;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 20px;
+}
+#offer_bg_4 {
+    background-image:
+            linear-gradient(to left, rgba(0, 0, 0, 0.50), rgba(0, 0, 0, 1)),
+            url('../assets/lomovcev_sv-DPcboE2nSjo-unsplash.jpg');
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+    height: 400px;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 20px;
+}
